@@ -1,4 +1,4 @@
-<?php get_header();  
+<?php get_header();
 /**
  * Default Page Template
  *
@@ -6,14 +6,38 @@
  */
 ?>
 
-<!-- ******************* Hero Content ******************* -->
+    <div id="fullpage">
+    	<div class="section" data-anchor="first">
+            <div class="container align-center">
+                <div class="col">
+                    PAGE CONTENT 1
+                </div>
+            </div>
+        </div>
+        <div class="section" data-anchor="second">
+            <div class="container align-center">
+                <div class="col">
+                    PAGE CONTENT 2
+                </div>
+            </div>
+        </div>
+        <div class="section" data-anchor="third">
+            <div class="container align-center">
+                <div class="col">
+                    PAGE CONTENT 3
+                </div>
+            </div>
+        </div>
+        <div class="section" data-anchor="fourth">
+            <div class="container align-center">
+                <div class="col">
+                    PAGE CONTENT 4
+                </div>
+            </div>
+        </div>
+    </div>
 
-<?php get_template_part("template-parts/hero"); ?>
-
-<!-- ******************* Hero Content END ******************* -->
-
-<div class="container">
-
-</div><!--container-->
-
+<div class="image-frame">
+    IMAGE
+</div>
 <?php get_footer();?>

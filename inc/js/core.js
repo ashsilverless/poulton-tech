@@ -2,6 +2,25 @@
 
 jQuery(document).ready(function( $ ) {
 
+    new fullpage('#fullpage', {
+
+        onLeave: function(origin, destination, direction){
+    		var leavingSection = this;
+    		//after leaving section 1
+    		if(origin.index == 0 && direction =='down'){
+    			$('html').addClass('sssss');
+    		}
+    	}
+    });
+
+    $(document).on('click', '#prevSection', function(){
+      fullpage_api.moveSectionUp();
+    });
+
+    $(document).on('click', '#nextSection', function(){
+      fullpage_api.moveSectionDown();
+    });
+
 /* ADD CLASS ON LOAD*/
 
     $("html").delay(1500).queue(function(next) {
@@ -142,78 +161,11 @@ jQuery(document).ready(function( $ ) {
 		};
 	}
 
-
-// ========== Controller for lightbox elements
-
-	$(".gallery").each(function() {
-		$(this).find(".lightbox-gallery").magnificPopup({
-	        type: 'image',
-	        gallery:{
-	            enabled:true
-	        }
-	    });
-	});
-
-    $('.single-image').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		closeBtnInside: false,
-		fixedContentPos: true,
-		mainClass: 'mfp-no-margins mfp-with-zoom',
-		image: {
-			verticalFit: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300
-		}
-	});
-
-	$('.post-image a').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		closeBtnInside: false,
-		fixedContentPos: true,
-		mainClass: 'mfp-no-margins mfp-with-zoom',
-		image: {
-			verticalFit: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300
-		}
-	});
-
-// GLOBAL OWL CAROUSEL SETTINGS
-
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        autoplay:false,
-        autoplayHoverPause:true,
-        nav:true,
-    	    navClass: ['owl-prev', 'owl-next'],
-        responsive:{
-            0:{
-                items: 1
-            },
-            768: {
-	            items: 2
-            },
-            992:{
-                items: 3
-            },
-            1200: {
-	            items: 4
-            }
-        }
-    });
-
 /* CLASS AND FOCUS ON CLICK */
 
     $(".menu-trigger").click(function() {
-	    $(".menu-collapse").toggleClass("visible");
-	    $(".current-menu-item").toggleClass("loaded");
-	    $(".menu-trigger").toggleClass("opened");
+	    $(this).toggleClass("clicked");
+	    $(".offscreen-nav").toggleClass("show");
     });
 
     $(".read-more").click(function() {
