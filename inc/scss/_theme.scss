@@ -1,5 +1,46 @@
 /*! == THEME STYLES == */
 /*===========GLOBAL==========*/
+.border{
+    border:0px solid transparent;
+    &__bottom{
+        border-bottom:1px solid $brand-primary;
+    }
+    &__dotted{
+        border-style: dotted;
+    }
+    &__thin{
+        border-width:rem-calc(2);
+    }
+}
+.list{
+    &__no-padding{
+        ul{
+            padding-left:0;
+        }
+    }
+    &__style-line{
+        li{
+            list-style:none;
+            position:relative;
+            &:before{
+                height:1px;
+                width:rem-calc(10);
+                background-color:white;
+                position:absolute;
+                content:'';
+                top:50%;
+                transform:translateY(-50%);
+                left:rem-calc(-15);
+                background-color:$brand-primary;
+            }
+        }
+    }
+}
+.heading{
+    &__primary{
+        color:$brand-primary;
+    }
+}
 /*===========HEADER==========*/
 .offscreen-nav {
     content: '';
@@ -9,8 +50,9 @@
     display: grid;
     width: 100vw;
     height: 100vh;
-    background: red;
+    background: $brand-primary;
     transition:left 0.5s ease;
+    z-index:1000;
     &.show {
         left:0;
     }
@@ -22,7 +64,26 @@
     .menu {
         position: absolute;
         height:calc(100vh - 10em);
-        background: blue;
+        ul{
+            padding-left:0;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            position:relative;
+            padding-left:rem-calc(25);
+            &:before{
+                height:1px;
+                width:rem-calc(20);
+                background-color:white;
+                position:absolute;
+                content:'';
+                top:50%;
+                transform:translateY(-50%);
+                left:0;
+            }
+        }
     }
 }
 
@@ -32,6 +93,48 @@
     bottom: 0;
     background: red;
     height: 20vh;
+    opacity:0.2;
+}
+
+nav{
+    .menu-trigger{
+        display:flex;
+        justify-content:space-between;
+        width:rem-calc(75);
+        text-transform:uppercase;
+        transition:$fastEffect;
+        .menu-icon{
+            height:rem-calc(20);
+            position:relative;
+            width:rem-calc(26);
+            span{
+                height:rem-calc(2);
+                width:rem-calc(26);
+                background-color:white;
+                display:block;
+                position:absolute;
+                transition:$fastEffect;
+                &:first-of-type{
+                    top:0;
+                }
+                &:nth-of-type(2){
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+                &:last-of-type{
+                    bottom:0;
+                }
+            }
+        }
+        &:hover{
+            color:$brand-primary;
+            transition:$fastEffect;
+            span{
+                background-color: $brand-primary;
+                transition:$fastEffect;
+            }
+        }
+    }
 }
 
 /*===========BODY==========*/

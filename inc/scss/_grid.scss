@@ -55,26 +55,36 @@
         grid-column: span 12;
     }
 
-    &.cols-2 > .col {
-        grid-column: span 2;
+    @for $grid from 1 to $col-count {
+
+        &.cols-#{$grid} > .col{
+            grid-column: span $grid;
+        }
     }
 
-    &.cols-3  > .col {
-        grid-column: span 3;
+    @for $gridOffset from 1 to $col-count {
+        @for $grid from 1 to $col-count {
+            &.cols-offset-#{$gridOffset}-#{$grid} > .col{
+                grid-column-start:($gridOffset + 1);
+                grid-column-end:(($gridOffset + 1) + $grid);
+            }
+        }
     }
-
-    &.cols-4  > .col {
-        grid-column: span 4;
+    @for $gridColumnOne from 1 to $col-count {
+        @for $gridColumnTwo from 1 to $col-count {
+            &.cols-#{$gridColumnOne}-#{$gridColumnTwo}{
+                > .col:nth-of-type(2n -1) {
+                    grid-column: span $gridColumnOne;     
+                }       
+                > .col:nth-of-type(2n) {
+                    grid-column: span $gridColumnTwo;     
+                } 
+            }
+        }
     }
-
-    &.cols-6 > .col {
-        grid-column: span 6;
+    &.cols-6-6-12{
+        @include gridThreeCol(6, 6, 12);
     }
-
-    &.cols-12 > .col {
-        grid-column: span 12;
-    }
-
 }
 
 .container {
@@ -103,24 +113,6 @@
             align-self: flex-end;
         }
     }
-}
-
-/*=====PROJECT GRID RULES=====*/
-
-.container {
-
-&.cols-2-8-2 {
-    .col:nth-of-type(3n - 2) {
-        grid-column: span 2;
-    }
-    .col:nth-of-type(3n - 1) {
-        grid-column: span 8;
-    }
-    .col:nth-of-type(3n) {
-        grid-column: span 2;     
-    }
-}
-
 }
 
 /*===========MEDIA QUERIES==========*/

@@ -3,12 +3,12 @@
 jQuery(document).ready(function( $ ) {
 
     new fullpage('#fullpage', {
-
+    	verticalCentered: false,
         onLeave: function(origin, destination, direction){
     		var leavingSection = this;
     		//after leaving section 1
     		if(origin.index == 0 && direction =='down'){
-    			$('html').addClass('sssss');
+
     		}
     	}
     });
