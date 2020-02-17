@@ -46,10 +46,83 @@
                 <div class="menu">
                     <button type="button" name="button" id="prevSection">PREVIOUS!</button>
                     <ul id="myMenu">
-                    	<li><a href="#introducing">Introducing the PT1</a></li>
-                    	<li><a href="#size">Size &amp; Mass</a></li>
-                    	<li><a href="#rugged">Rugged</a></li>
-                    	<li><a href="#fourth">Fourth section</a></li>
+                        <?php if( have_rows('introducing') ):
+                            while ( have_rows('introducing') ) : the_row();
+                        ?>
+                    	   <li><a href="#introducing">Introducing the PT1</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('size_&_mass') ):
+                            while ( have_rows('size_&_mass') ) : the_row();
+                        ?>
+                    	   <li><a href="#size">Size &amp; Mass</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('rugged') ):
+                            while ( have_rows('rugged') ) : the_row();
+                        ?>
+                    	   <li><a href="#rugged">Rugged</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('fireproof') ):
+                            while ( have_rows('fireproof') ) : the_row();
+                        ?>
+                            <li><a href="#fireproof">Fire Proof</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('metal_metal') ):
+                            while ( have_rows('metal_metal') ) : the_row();
+                        ?>
+                            <li><a href="#metal">Metal to Metal Seal</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('welding') ):
+                            while ( have_rows('welding') ) : the_row();
+                        ?>
+                            <li><a href="#welding">No Welding Required</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('pressure') ):
+                            while ( have_rows('pressure') ) : the_row();
+                        ?>
+                            <li><a href="#welding">Pressure Test</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('integrity') ):
+                            while ( have_rows('integrity') ) : the_row();
+                        ?>
+                            <li><a href="#integrity">Pipe Integrity</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('cost') ):
+                            while ( have_rows('cost') ) : the_row();
+                        ?>
+                            <li><a href="#cost">Cost &amp; Value</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('type') ):
+                            while ( have_rows('type') ) : the_row();
+                        ?>
+                            <li><a href="#type">Type Approval</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('patented') ):
+                            while ( have_rows('patented') ) : the_row();
+                        ?>
+                            <li><a href="#patented">Patented</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('installation') ):
+                            while ( have_rows('installation') ) : the_row();
+                        ?>
+                            <li><a href="#installation">Installation</a></li>
+                        <?php endwhile; endif;?>
+
+                        <?php if( have_rows('safer') ):
+                            while ( have_rows('safer') ) : the_row();
+                        ?>
+                    	   <li><a href="#safer">Better</a></li>
+                        <?php endwhile; endif;?>
                     </ul>
                     <button type="button" name="button" id="nextSection">NEXT!</button>
                 </div>

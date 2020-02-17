@@ -61,6 +61,7 @@
 .on-page-nav {
     position: relative;
     margin-top: 5em;
+    font-size:rem-calc(14);
     .menu {
         position: absolute;
         height:calc(100vh - 10em);
@@ -72,14 +73,14 @@
         }
         a{
             position:relative;
-            padding-left:rem-calc(25);
+            padding-left:rem-calc(30);
             &:before{
                 height:1px;
                 width:rem-calc(20);
                 background-color:white;
                 position:absolute;
                 content:'';
-                top:50%;
+                top:60%;
                 transform:translateY(-50%);
                 left:0;
             }
