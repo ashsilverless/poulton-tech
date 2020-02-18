@@ -1,4 +1,4 @@
-<div class="section" data-anchor="safer">
+<div class="section" data-anchor="safer" data-link="betterLink">
 	<?php $image = get_sub_field('image2');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

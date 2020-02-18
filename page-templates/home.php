@@ -98,8 +98,6 @@ get_header();?>
     	<?php endwhile; endif;?>
     </div>
 
-<div class="image-frame">
-    IMAGE
-</div>
+<?php get_template_part('template-parts/animation-container');?>
 
 <?php get_footer();?>

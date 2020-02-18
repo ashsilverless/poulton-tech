@@ -1,4 +1,4 @@
-<div class="section" data-anchor="introducing">
+<div class="section" data-anchor="introducing" data-link="intro">
 	<?php $image = get_sub_field('text_image');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

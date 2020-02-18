@@ -1,4 +1,4 @@
-<div class="section" data-anchor="cost">
+<div class="section" data-anchor="cost" data-link="costLink">
 	<?php $image = get_sub_field('image2');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

@@ -1,4 +1,4 @@
-<div class="section" data-anchor="metal">
+<div class="section" data-anchor="metal" data-link="metalLink">
 	<?php $image = get_sub_field('image');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

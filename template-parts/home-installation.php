@@ -1,4 +1,4 @@
-<div class="section" data-anchor="installation">
+<div class="section" data-anchor="installation" data-link="installationLink">
 	<?php $image = get_sub_field('image2');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

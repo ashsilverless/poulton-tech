@@ -1,4 +1,4 @@
-<div class="section" data-anchor="fireproof">
+<div class="section" data-anchor="fireproof" data-link="fireLink">
 	<?php $image = get_sub_field('image');?>
     <div class="container cols-6-6-12 pt8">
     	<div class="col"></div>

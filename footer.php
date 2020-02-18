@@ -9,17 +9,15 @@
 
 <footer class="footer">
 
-	<div class="pre-socket"></div><!--pre-socket-->
-
 	<div class="socket">
 
-		<div class="container cols-4">
+		<div class="container cols-8">
 
-			<div class="col colophon">&copy; poulton Master Theme <?php echo date ('Y');?></div>
+			<div class="col colophon">Copyright &copy; <?php echo date ('Y');?> Poulton Technologies</div>
 
 			<div class="col poulton">
 
-				<a href="https://poulton.co.uk"><?php get_template_part('inc/img/poulton', 'logo');?></a>
+				<a href="https://poulton.co.uk"><?php get_template_part('inc/img/silverless', 'logo');?></a>
 
 			</div>
 

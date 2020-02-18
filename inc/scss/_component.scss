@@ -7,7 +7,6 @@
     padding: 0.75em 1em;
     color: $brand-mid-grey;
     background: white;
-    text-transform: uppercase;
     text-align: left;
     font-family: $body-font;
     font-weight: 400;
@@ -20,7 +19,9 @@
     cursor: pointer;
 
     &:hover {
-        background: $brand-light-grey;
+        background: $brand-primary;
+        color:$brand-secondary;
+
     }
     
     i {
@@ -95,8 +96,8 @@ a.next-section {
     margin-top: -5px;
  
     #logo {
-        width:80px;
-        height:30px;
+        width:120px;
+        height:50px;
     }
 
     #poulton {

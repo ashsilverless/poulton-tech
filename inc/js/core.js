@@ -10,6 +10,23 @@ jQuery(document).ready(function( $ ) {
     		if(origin.index == 0 && direction =='down'){
 
     		}
+    	},
+    	afterLoad: function (origin, anchorLink, index){
+    		var currentId = $(anchorLink.item).attr('data-link');
+    		var linkContainer = $('#myMenu li');
+
+    		$(linkContainer).removeClass('active');
+    		$('#' + currentId).addClass('active');
+
+    		$('.image-frame').attr('id', currentId + 'Animation');
+
+    		if(anchorLink.isLast === true) {
+    			$('#nextSection').fadeOut();
+    		} else {
+    			$('#nextSection').fadeIn();
+    		}
+
+    		
     	}
     });
 
@@ -17,7 +34,8 @@ jQuery(document).ready(function( $ ) {
       fullpage_api.moveSectionUp();
     });
 
-    $(document).on('click', '#nextSection', function(){
+    $(document).on('click', '#nextSection', function(e){
+    e.preventDefault();
       fullpage_api.moveSectionDown();
     });
 
@@ -163,9 +181,12 @@ jQuery(document).ready(function( $ ) {
 
 /* CLASS AND FOCUS ON CLICK */
 
-    $(".menu-trigger").click(function() {
+    $(".menu-trigger").on('click', function() {
 	    $(this).toggleClass("clicked");
+	    $('.hamburger').toggleClass('is-active');
+	    $('.menuText').toggleClass('hideItem');
 	    $(".offscreen-nav").toggleClass("show");
+	    $('.on-page-nav').toggleClass('hideMenu');
     });
 
     $(".read-more").click(function() {

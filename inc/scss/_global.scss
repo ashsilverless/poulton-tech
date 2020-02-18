@@ -346,9 +346,14 @@ footer {
 
 	.socket {
 		letter-spacing: 1px;
-		background: $brand-dark-grey;
-		color: $brand-tertiary;
+		background: $brand-secondary;
+		color: white;
+        font-size:rem-calc(12);
 		padding: 1em;
+
+        a{
+            color:white;
+        }
 
 		.colophon, .mandatory {
 			font-size: 0.9em;
