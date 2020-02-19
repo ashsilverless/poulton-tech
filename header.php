@@ -153,11 +153,6 @@
                 'container_class' => 'mainMenu pt7 pb5'
             ));
             ?>
-            <div class="contact-details">
-                <?php the_field('address', 'options');?>
-                <p><a href="tel:<?php the_field('telephone', 'options');?>"><?php the_field('telephone', 'options');?></a></p>
-                <p><a href="mailto:<?php the_field('telephone', 'options');?>"><?php the_field('email', 'options');?></a></p>
-            </div>
         </div>
     </div>
 </div>
