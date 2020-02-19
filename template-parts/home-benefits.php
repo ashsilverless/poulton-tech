@@ -10,7 +10,7 @@
         	</div>
         	<div class="content__twocolumn">
         		<?php the_sub_field('content');?>
-                <a href="<?php the_sub_field('page_link')?>" class="button">See applications for the PT1</a>
+                <a href="<?php the_sub_field('page_link')?>" class="button button__transparent button__border-left button__border-right button__border-primary button__border-round">See applications for the PT1</a>
         	</div>
         </div>
     </div>
