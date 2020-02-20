@@ -68,7 +68,6 @@ main {
 
 p {
     font-size: 1em;
-    line-height: 1.3em
 }
 
 a {
@@ -319,17 +318,17 @@ nav {
 footer {
 
 	a {
-		color: $brand-tertiary;
+		color: $brand-secondary;
 
 		&:hover {
-			color: white;
+			color: $brand-primary;
 		}
 	}
 
 	.pre-socket {
 		padding: 2em 1em;
-		background: $brand-primary;
-		color: $brand-tertiary;
+		background: white;
+		color: $brand-secondary;
 
 		.socials a {
 		    color: $brand-light-grey;
@@ -346,14 +345,10 @@ footer {
 
 	.socket {
 		letter-spacing: 1px;
-		background: $brand-secondary;
-		color: white;
+		background: white;
+		color: $brand-secondary;
         font-size:rem-calc(12);
-		padding: 1em;
-
-        a{
-            color:white;
-        }
+		padding: .3em;
 
 		.colophon, .mandatory {
 			font-size: 0.9em;
@@ -365,6 +360,16 @@ footer {
 			justify-content: flex-start;
 		}
 
+        #silverless{
+            path{
+                fill: $brand-secondary;
+            }
+        }
+        #created{
+            path{
+                fill: $brand-secondary;
+            }
+        }
 		.mandatory {
 			justify-content: flex-end;
 

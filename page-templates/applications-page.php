@@ -12,7 +12,7 @@ get_header();?>
 	<?php get_template_part('template-parts/_hero');?>
 <?php endwhile; endif;?>
 
-<div class="container cols-offset-4-16 pt2">
+<div class="container cols-offset-4-16 pt5">
 	<div class="col container cols-12 grid-gap">
 		<?php if( have_rows('content') ):
 	            while ( have_rows('content') ) : the_row();
