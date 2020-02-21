@@ -73,10 +73,43 @@
         }
     }
 }
+.form{
+    max-width: 75%;
+    input{
+        padding:rem-calc(10);
+        ::placeholder{
+            color: $brand-secondary;
+        }
+    }
+    .textarea, .input{
+        width: 100%;
+        textarea, input{
+            width: 100%;
+        }
+    }
+    input[type="submit"]{
+        width: 100%;
+        background-color:transparent;
+        color:$brand-primary;
+        border-radius:50px;
+        padding:1rem rem-calc(50);
+        border-left:5px solid $brand-primary;
+        border-right:5px solid $brand-primary;
+        border-top:5px solid transparent;
+        border-bottom:5px solid transparent;
+        transition: $fastEffect;
+        &:hover{
+            border-radius:0;
+            color: white;
+            background-color:$brand-primary;
+            transition: $fastEffect;
+        }
+    }
+}
 /*===========HEADER==========*/
 .offscreen-nav {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100vw;
     display: grid;
@@ -290,6 +323,18 @@
         }
     }
 }
+
+.social{
+    list-style: none;
+    padding:0;
+    display: flex;
+    li{
+        margin-right: rem-calc(50);
+        img{
+            height: rem-calc(28);
+        }
+    }
+}
 /*===========FOOTER==========*/
 
 
@@ -307,14 +352,28 @@
     opacity:0.2;
     #connectorContainer{
         background-color: #516f9c;
-        width:rem-calc(450);
-        height:rem-calc(350);
+        width:20%;
+        height:30vh;
         position:absolute;
         top:0%;
         left:50%;
-        transform:translateX(-50%) translateY(-50px)
+        transform:translateX(-50%) translateY(-50px);
+    }
+    #barContainer{
+        background-color: #eb4034;
+        width: 200vw;
+        height: 5vh;
+        left: -100%;
+        position:absolute;
+        top: 50%;
+        transform:translateX(0) translateY(0%);
     }
 }
 #sizeMassAnimation{
-    transform:translateX(-200px) translateY(100px) scale(.5);
+    #connectorContainer{
+        transform:translateX(-75%) translateY(6%) scale(.5);
+    }
+    #barContainer{
+        transform:translateX(100%) translateY(0%) scale(.6);
+    }
 }

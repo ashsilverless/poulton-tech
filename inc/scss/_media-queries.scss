@@ -1,5 +1,66 @@
 /*! == MEDIA QUERIES == */
 
+/*===========MEDIA QUERIES==========*/
+
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+		
+		@for $i from 1 through $col-count {
+			
+			.container.cols-#{$name}-#{$i} > .col {
+				grid-column: span $i !important;
+			}
+		}
+		@for $gridColumnOne from 1 to $col-count {
+        @for $gridColumnTwo from 1 to $col-count {
+	            &.cols-#{$name}-#{$gridColumnOne}-#{$gridColumnTwo}{
+	                > .col:nth-of-type(2n -1) {
+	                    grid-column: span $gridColumnOne !important;     
+	                }       
+	                > .col:nth-of-type(2n) {
+	                    grid-column: span $gridColumnTwo !important;     
+	                } 
+	            }
+	        }
+	    }
+	    @for $gridOffset from 1 to $col-count {
+	        @for $grid from 1 to $col-count {
+	            &.cols-offset-#{$name}-#{$gridOffset}-#{$grid} > .col{
+	                grid-column-start:($gridOffset + 1) !important;
+	                grid-column-end:(($gridOffset + 1) + $grid) !important;
+	            }
+	        }
+	    }
+		.align-#{$name}-center{
+			text-align: center;
+		}
+		.align-#{$name}-left{
+			text-align: left;
+		}
+		.hide-#{$name}{
+			display: none;
+		}
+		.show-#{$name}{
+			display: block;
+		}
+
+		$distance: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20); // Amount string.
+		$sides: (top, bottom, left, right); // Sides var
+
+		@each $amount in $distance {
+		    @each $side in $sides {
+		        .m-#{$name}-#{str-slice($side, 0, 1)}#{$amount} {
+		            margin-#{$side}: #{$amount}em ;
+		        }
+		        .p-#{$name}-#{str-slice($side, 0, 1)}#{$amount} {
+		            padding-#{$side}: #{$amount}em;
+		        }
+		    }
+		}
+	}
+}
+
 /*===========LARGE (1200px)==========*/
 
 @media only screen and (max-width: 1200px) {
@@ -47,8 +108,17 @@ body {
 /*---HEADER---*/
 
 /*---CONTENT---*/
+.grid-gap{
+	grid-gap:0.25em;
+}
+.form{
+    max-width: 100%;
+}
   
 /*---FOOTER---*/
+.footer .socket .colophon, .footer .socket .mandatory{
+	justify-content: center;
+}
 
 }/*---end small mq---*/
 
