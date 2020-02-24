@@ -17,12 +17,6 @@
     transition: all 0.5s ease;
     text-rendering: geometricPrecision; /*fix rendering issues on different buttons*/
     cursor: pointer;
-
-    &:hover {
-        background: $brand-primary;
-        color:$brand-secondary;
-
-    }
     
     i {
         position: absolute;

@@ -11,7 +11,7 @@
 
 	<div class="socket">
 
-		<div class="container cols-8">
+		<div class="container cols-8 p-xl-l1 p-xl-r1 cols-sm-24 ">
 
 			<div class="col colophon">Copyright &copy; <?php echo date ('Y');?> Poulton Technologies</div>
 

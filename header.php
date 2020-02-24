@@ -24,7 +24,7 @@
 
 <header>
     <nav id="nav">
-        <div class="container cols-12-12 pt1 pb1 border border__bottom border__dotted align-vert-c">
+        <div class="container cols-12-12 cols-sm-8-16 pt1 pb1 p-xl-l1 p-xl-r1 border border__bottom border__dotted align-vert-c">
             <div class="col">
                 <div class="menu-trigger">
                    <button class="hamburger hamburger--spin" type="button">
@@ -145,7 +145,7 @@
 </header>
 
 <div class="offscreen-nav">
-    <div class="container cols-offset-12-12">
+    <div class="container cols-offset-12-12 cols-offset-sm-4-16">
         <div class="col mainMenuContainer">
             <?php
             wp_nav_menu(array(
@@ -153,11 +153,6 @@
                 'container_class' => 'mainMenu pt7 pb5'
             ));
             ?>
-            <div class="contact-details">
-                <?php the_field('address', 'options');?>
-                <p><a href="tel:<?php the_field('telephone', 'options');?>"><?php the_field('telephone', 'options');?></a></p>
-                <p><a href="mailto:<?php the_field('telephone', 'options');?>"><?php the_field('email', 'options');?></a></p>
-            </div>
         </div>
     </div>
 </div>
