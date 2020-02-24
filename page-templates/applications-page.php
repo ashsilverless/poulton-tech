@@ -1,4 +1,3 @@
-
 <?php
 /**
  * ============== Template Name: Applications Page
@@ -30,4 +29,5 @@ get_header();?>
 			<?php endwhile; endif;?>
 	</div>
 </div>
+
 <?php get_footer();?>

@@ -1,4 +1,3 @@
-
 <?php $image = get_sub_field('title_image');
 	$hero_image = get_sub_field('hero_image');?>
 <section class="hero__container slow-fade" style="background-image:url(<?php echo esc_url($hero_image['url']);?>);"/>

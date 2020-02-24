@@ -1,4 +1,3 @@
-
 <div class="section" data-anchor="benefits" data-link="benefitsLink">
     <div class="container cols-offset-6-18 pt8">
         <div class="col">
