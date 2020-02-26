@@ -377,7 +377,6 @@
     width: 100%;
     bottom: 0;
     height: 40vh;
-    opacity:0.2;
     #connectorContainer{
         background-color: #516f9c;
         width:60vh;
@@ -388,44 +387,185 @@
         transform:translateX(-50%) translateY(-50px);
         z-index:2;
     }
+    .connectorDup{
+        height:4vh;
+        width:50vw;
+        background-color:#911bff;
+        position:absolute;
+        left:0;
+        opacity:0;
+        @for $i from 1 to 5 {
+            &:nth-child(4n - #{$i}){
+                top:41% - (7% * $i);
+            }
+        }
+    }
     #barContainer{
         background-color: #eb4034;
-        width: 200vw;
+        width: 400vw;
         height: 6vh;
         left: -200%;
         position:absolute;
-        top: 35%;
-        transform:translateX(0) translateY(0%);
+        top: 41%;
+        transform:translateX(-50%) translateY(0%);
         z-index:1;
+    }
+    .flangeDup{
+        height:5vh;
+        width:50vw;
+        background-color:#1abfac;
+        position:absolute;
+        right:0;
+        opacity:0;
+        @for $i from 1 to 5 {
+            &:nth-of-type(4n - #{$i}){
+                top:41% - (12% * $i);
+            }
+        }
     }
     #flangeContainer{
         background-color: #a0d9ae;
         width:40vh;
         height:20vh;
         position:absolute;
-        top:29%;
+        top:35%;
         left:57%;
         transform:translateX(-50%) translateY(-50px);
         z-index:2;
         opacity:0;
     }
-}
-#sizeMassAnimation{
-    #connectorContainer{
-        transform:translateX(-100%) translateY(6%) scale(.3);
+    #connectorContent{
+        position:absolute;
+        top:75%;
+        left:18%;
+        opacity:0;
+        #connectorContent1, #connectorContent2{
+            position:absolute;
+            top:rem-calc(20);
+            left:0;
+        }
+        #connectorContent2{
+            opacity:0;
+            width:max-content;
+        }
+    }
+    #flangeContent{
+        position:absolute;
+        top:75%;
+        left:53%;
+        opacity:0;
+        #flangeContent1, #flangeContent2{
+            position:absolute;
+            top:rem-calc(20);
+            left:0;
+        }
+        #flangeContent2{
+            opacity:0;
+            width:max-content;
+        }
+    }
+    #connectorPointer{
+        position:absolute;
+        top:47%;
+        left:17%;
+        height:15vh;
+        width:2vh;
+        z-index:10;
+        opacity:0;
+        svg{
+            max-height:100%;
+        }
+    }
+    #flangePointer{
+        position:absolute;
+        top:47%;
+        left:52%;
+        height:15vh;
+        width:2vh;
+        z-index:10;
+        opacity:0;
+        svg{
+            max-height:100%;
+        }
+    }
+    &.active{
+       #connectorContainer{
+        transform:translateX(-100%) translateY(15%) scale(.15);
         animation-name: connectorAnimation1;
         animation-duration:4.5s;
+        }
+        .connectorDup, .flangeDup{
+            opacity:1;
+            transition:opacity .7s;
+            @for $i from 1 to 5 {
+                &:nth-of-type(4n - #{$i}){
+                    transition-delay:4.5s + (0.5s * $i);
+                }
+            }
+        }
+        #connectorContent, #flangeContent{
+            opacity:1;
+            transition: all .3s;
+            transition-delay:0.5s;
+            #connectorContent1, #flangeContent1{
+                opacity:0;
+                transition: all .3s;
+                transition-delay:3.5s;
+            }
+            #connectorContent2, #flangeContent2{
+                opacity:1;
+                transition: all .3s;
+                transition-delay:3.5s;
+            }
+        }
+        #barContainer{
+            transform:translateX(20%) translateY(0%) scale(.4);
+            animation-name: barAnimation1;
+            animation-duration:4.5s;
+        }
+        #flangeContainer{
+            opacity:1;
+            transform: translateX(-50%) translateY(-23%) scale(.4);
+            animation-name: flangeAnimation1;
+            animation-duration:4.5s;
+        }
+        #connectorPointer, #flangePointer{
+            opacity:0;
+            animation-name: connectorPointer1;
+            animation-duration:4.5s;
+        }
     }
-    #barContainer{
-        transform:translateX(75%) translateY(0%) scale(.6);
-        animation-name: barAnimation1;
-        animation-duration:4.5s;
-    }
-    #flangeContainer{
-        opacity:1;
-        transform: translateX(0%) translateY(-23%) scale(.6);
-        animation-name: flangeAnimation1;
-        animation-duration:4.5s;
+    &.activeRugged{
+        #connectorContainer{
+        transform:translateX(-50%) translateY(15%) scale(.5);
+        animation-name: connectorAnimation2;
+        animation-duration:1.5s;
+        }
+        .connectorDup, .flangeDup{
+            opacity:0;
+            transition:opacity .7s;
+            @for $i from 1 to 5 {
+                &:nth-of-type(4n - #{$i}){
+                    transition-delay:0s;
+                }
+            }
+        }
+        #barContainer{
+            transform: translateX(20%) translateY(0%) scale(1);
+            animation-name: barAnimation2;
+            animation-duration:1.5s;
+        }
+        #flangeContainer{
+            opacity:0;
+            transform: translateX(200%) translateY(-50px) scale(1);
+            animation-name: flangeAnimation2;
+            animation-duration:1.5s;
+            animation-timing-function: easeOutQuad;
+        }
+        #connectorContent, #flangeContent{
+            opacity:0;
+            transition: all .3s;
+        }
     }
 }
 
@@ -434,37 +574,36 @@
         transform:translateX(-50%) translateY(-50px);
     }
     25% {
-        transform:translateX(-75%) translateY(6%) scale(.5);
+        transform:translateX(-85%) translateY(15%) scale(.5);
     }
     70% {
-        transform:translateX(-75%) translateY(6%) scale(.5);
+        transform:translateX(-85%) translateY(15%) scale(.5);
     }
     100% {
-        transform:translateX(-100%) translateY(6%) scale(.3);
+        transform:translateX(-100%) translateY(15%) scale(.15);
     }
 }
-
 @keyframes barAnimation1{
     0% {
-        transform:translateX(0) translateY(0%);
+        transform:translateX(-50%) translateY(0%);
     }
     10% {
-        transform:translateX(0) translateY(0%);
+        transform:translateX(-50%) translateY(0%);
     }
     30% {
-        transform:translateX(75%) translateY(0%);
+        transform:translateX(20%) translateY(0%);
     }
     70% {
-        transform:translateX(75%) translateY(0%);
+        transform:translateX(20%) translateY(0%);
     }
     100% {
-        transform:translateX(75%) translateY(0%) scale(.6);
+        transform:translateX(20%) translateY(0%) scale(.4);
     }
 }
 @keyframes flangeAnimation1{
     0% {
         opacity:0;
-        transform: translateX(-50%) translateY(-50px) scale(1);
+        transform: translateX(-18%) translateY(-50px) scale(1);
     }
     20% {
         opacity:0;
@@ -473,9 +612,52 @@
         opacity:1;
     }
     70%{
-        transform:translateX(-50%) translateY(-50px) scale(1);
+        transform:translateX(-18%) translateY(-50px) scale(1);
     }
     100%{
-        transform:translateX(0%) translateY(-23%) scale(.6);
+        transform:translateX(-50%) translateY(-23%) scale(.4);
+    }
+}
+@keyframes connectorPointer1{
+    0% {
+        opacity:0;
+    }
+    25% {
+        opacity:0;
+    }
+    30% {
+        opacity:1;
+    }
+    70% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+}
+@keyframes connectorAnimation2{
+    0%{
+        transform:translateX(-100%) translateY(15%) scale(.15);
+    }
+    100%{
+        transform:translateX(-50%) translateY(15%) scale(.5);
+    }
+}
+@keyframes barAnimation2{
+    0%{
+        transform: translateX(20%) translateY(0%) scale(.4);
+    }
+    100%{
+        transform: translateX(20%) translateY(0%) scale(1);
+    }
+}
+@keyframes flangeAnimation2{
+    0%{
+        opacity:1;
+        transform:translateX(-50%) translateY(-23%) scale(.4);
+    }
+    100%{
+        opacity:0;
+        transform: translateX(200%) translateY(-50px) scale(1);
     }
 }

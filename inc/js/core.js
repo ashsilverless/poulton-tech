@@ -26,6 +26,11 @@ jQuery(document).ready(function( $ ) {
     			$('#nextSection').fadeIn();
     		}
 
+    		if(anchorLink.index == 1){
+    			$('.image-frame').addClass('active');
+    		} else if ( anchorLink.index == 2){
+    			$('.image-frame').addClass('activeRugged');
+    		}
     		
     	}
     });
