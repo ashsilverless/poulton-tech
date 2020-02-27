@@ -22,4 +22,6 @@
     <div class="flangeDup"></div>
     <div id="connectorPointer"><?php get_template_part('inc/img/pointer');?></div>
     <div id="flangePointer"><?php get_template_part('inc/img/pointer');?></div>
+    <div id="connectorSelected"><?php get_template_part('inc/img/selectedItem');?></div>
+    <div id="flangeSelected"><?php get_template_part('inc/img/selectedItem');?></div>
 </div>

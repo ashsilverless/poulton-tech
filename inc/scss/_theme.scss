@@ -383,7 +383,7 @@
         height:30vh;
         position:absolute;
         top:0%;
-        left:44%;
+        left:50vw;
         transform:translateX(-50%) translateY(-50px);
         z-index:2;
     }
@@ -429,7 +429,7 @@
         height:20vh;
         position:absolute;
         top:35%;
-        left:57%;
+        left:60vw;
         transform:translateX(-50%) translateY(-50px);
         z-index:2;
         opacity:0;
@@ -437,7 +437,7 @@
     #connectorContent{
         position:absolute;
         top:75%;
-        left:18%;
+        left:34vw;
         opacity:0;
         #connectorContent1, #connectorContent2{
             position:absolute;
@@ -452,7 +452,7 @@
     #flangeContent{
         position:absolute;
         top:75%;
-        left:53%;
+        left:58vw;
         opacity:0;
         #flangeContent1, #flangeContent2{
             position:absolute;
@@ -467,7 +467,7 @@
     #connectorPointer{
         position:absolute;
         top:47%;
-        left:17%;
+        left:33vw;
         height:15vh;
         width:2vh;
         z-index:10;
@@ -479,11 +479,35 @@
     #flangePointer{
         position:absolute;
         top:47%;
-        left:52%;
+        left:57vw;
         height:15vh;
         width:2vh;
         z-index:10;
         opacity:0;
+        svg{
+            max-height:100%;
+        }
+    }
+    #connectorSelected{
+        position:absolute;
+        top:42.5%;
+        left:32vw;
+        height:5vh;
+        width:5vh;
+        z-index:10;
+        opacity: 0;
+        svg{
+            max-height:100%;
+        }
+    }
+    #flangeSelected{
+        position:absolute;
+        top:41%;
+        left:56vw;
+        height:12vh;
+        width:12vh;
+        z-index:10;
+        opacity: 0;
         svg{
             max-height:100%;
         }
