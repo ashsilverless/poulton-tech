@@ -26,9 +26,10 @@ jQuery(document).ready(function( $ ) {
     			$('#nextSection').fadeIn();
     		}
 
-    		if(anchorLink.index == 1){
+    		if((anchorLink.index == 1) && (index == 'down')){
     			$('.image-frame').addClass('active');
-    		} else if ( anchorLink.index == 2){
+    			console.log(index);
+    		} else if ( (anchorLink.index == 2) && (index == 'down')){
     			$('.image-frame').addClass('activeRugged');
     		}
     		

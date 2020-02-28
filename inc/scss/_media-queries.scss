@@ -89,6 +89,9 @@ body {
 /*---HEADER---*/
 
 /*---CONTENT---*/
+.content__twocolumn{
+	column-count: 1;
+}
 
 /*---FOOTER---*/
 
@@ -105,7 +108,28 @@ body {
   font-size: 0.65em;
 }
 
+.heading{
+	&__xl{
+
+	}
+	&__lg{
+		font-size:rem-calc(18);
+	}
+	&__md{
+
+	}
+	&__sm{
+
+	}
+	&__xs{
+
+	}
+}
+
 /*---HEADER---*/
+.nav-content{
+	display: none;
+}
 
 /*---CONTENT---*/
 .grid-gap{
@@ -114,7 +138,9 @@ body {
 .form{
     max-width: 100%;
 }
-  
+.ptIcon{
+	max-height: rem-calc(45);
+}
 /*---FOOTER---*/
 .footer .socket .colophon, .footer .socket .mandatory{
 	justify-content: center;
