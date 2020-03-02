@@ -1,9 +1,11 @@
 //@prepros-prepend fullpage.min.js
+//@prepros-prepend scrolloverflow.min.js
 
 jQuery(document).ready(function( $ ) {
 
     new fullpage('#fullpage', {
     	verticalCentered: false,
+    	scrollOverflow: true,
         onLeave: function(origin, destination, direction){
     		var leavingSection = this;
     		//after leaving section 1
@@ -27,12 +29,16 @@ jQuery(document).ready(function( $ ) {
     		}
 
     		if((anchorLink.index == 1) && (index == 'down')){
-    			$('.image-frame').addClass('active');
-    			console.log(index);
+    			$('.image-frame').removeClass('completeAnimation').addClass('active');
     		} else if ( (anchorLink.index == 2) && (index == 'down')){
-    			$('.image-frame').addClass('activeRugged');
+    			$('.image-frame').removeClass('completeAnimation').addClass('activeRugged');
     		}
-    		
+    		if(anchorLink.isLast == true){
+    			$('.image-frame').hide();
+    			$('.image-frame').removeClass('active activeRugged').addClass('completeAnimation');
+    		} else {
+    			$('.image-frame').show()
+    		}
     	}
     });
 

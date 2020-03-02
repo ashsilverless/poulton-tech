@@ -82,6 +82,38 @@
     }
 }
 /*===========HEADER==========*/
+.loaded{
+    #poultonLogo{
+        .cls-1{
+            transition:$slowEffect;
+        }
+        .circle{
+            fill:$brand-primary;
+            transition:$slowEffect;
+        }
+        #circleTop{
+            transform:translate(-128.46px, -393.33px);
+        }
+        #circleBottom{
+            transform:translate(-128.46px, -393.33px)
+        }
+        &:hover{
+            .cls-1{
+                fill:$brand-primary;
+                transition:$slowEffect;
+            }
+            #circleTop{
+                transform:translate(-128.46px, -380px);
+                transition:$slowEffect;
+            }
+            #circleBottom{
+                transform:translate(-128.46px, -402px);
+                transition:$slowEffect;
+            }
+        }   
+    }
+}
+
 .offscreen-nav {
     content: '';
     position: fixed;
@@ -382,13 +414,13 @@
         width:30vw;
         height:15vw;
         position:absolute;
-        top:2%;
+        top:0vw;
         left:50vw;
         transform:translateX(-50%);
         z-index:2;
     }
     .connectorDup{
-        height:4vh;
+        height:3vw;
         width:50vw;
         background-color:#911bff;
         position:absolute;
@@ -396,7 +428,7 @@
         opacity:0;
         @for $i from 1 to 5 {
             &:nth-child(4n - #{$i}){
-                top:41% - (7% * $i);
+                top:5.5vw - (2vw * $i);
             }
         }
     }
@@ -406,12 +438,12 @@
         height: 2vw;
         left: -200%;
         position:absolute;
-        top: 45%;
+        top: 6.5vw;
         transform:translateX(-50%) translateY(0%);
         z-index:1;
     }
     .flangeDup{
-        height:5vh;
+        height:4vw;
         width:50vw;
         background-color:#1abfac;
         position:absolute;
@@ -419,7 +451,7 @@
         opacity:0;
         @for $i from 1 to 5 {
             &:nth-of-type(4n - #{$i}){
-                top:41% - (12% * $i);
+                top:5vw - (3vw * $i);
             }
         }
     }
@@ -428,7 +460,7 @@
         width:20vw;
         height:10vw;
         position:absolute;
-        top:35%;
+        top:2.5vw;
         left:60vw;
         transform:translateX(-50%);
         z-index:2;
@@ -436,7 +468,7 @@
     }
     #connectorContent{
         position:absolute;
-        top:75%;
+        top:13vw;
         left:34vw;
         opacity:0;
         #connectorContent1, #connectorContent2{
@@ -451,7 +483,7 @@
     }
     #flangeContent{
         position:absolute;
-        top:75%;
+        top:13vw;
         left:58vw;
         opacity:0;
         #flangeContent1, #flangeContent2{
@@ -466,7 +498,7 @@
     }
     #connectorPointer{
         position:absolute;
-        top:47%;
+        top:7vw;
         left:33vw;
         height:15vh;
         width:2vh;
@@ -478,7 +510,7 @@
     }
     #flangePointer{
         position:absolute;
-        top:47%;
+        top:7vw;
         left:57vw;
         height:15vh;
         width:2vh;
@@ -490,24 +522,26 @@
     }
     #connectorSelected{
         position:absolute;
-        top:42%;
+        top:8vw;
         left:32vw;
-        height:5vh;
-        width:5vh;
+        height:5vw;
+        width:5vw;
         z-index:10;
         opacity: 0;
+        transform:translateY(-50%);
         svg{
             max-height:100%;
         }
     }
     #flangeSelected{
         position:absolute;
-        top:41%;
+        top:8.5vw;
         left:56vw;
-        height:12vh;
-        width:12vh;
+        height:6vw;
+        width:6vw;
         z-index:10;
         opacity: 0;
+        transform:translateY(-50%);
         svg{
             max-height:100%;
         }
@@ -515,7 +549,7 @@
     &.active{
        #connectorContainer{
         transform: translateX(-50%) scale(.15);
-        top:10%;
+        top:0vw;
         left:35vw;
         animation-name: connectorAnimation1;
         animation-duration:4.5s;
@@ -552,7 +586,7 @@
         #flangeContainer{
             opacity:1;
             transform:translateX(-50%) scale(.4);
-            top:23%;
+            top:2.5vw;
             left:60vw;
             animation-name: flangeAnimation1;
             animation-duration:4.5s;
@@ -571,7 +605,7 @@
     &.activeRugged{
         #connectorContainer{
         transform:translateX(-50%) scale(.5);
-        top:10%;
+        top:0vw;
         left:50vw;
         animation-name: connectorAnimation2;
         animation-duration:1.5s;
@@ -602,27 +636,47 @@
             transition: all .3s;
         }
     }
+    &.completeAnimation{
+        #connectorContainer{
+        transform:translateX(-50%) scale(.5);
+        top:10%;
+        left:50vw;
+        }
+        .connectorDup, .flangeDup{
+            opacity:0;
+        }
+        #barContainer{
+            transform: translateX(20%) translateY(0%) scale(1);
+        }
+        #flangeContainer{
+            opacity:0;
+            transform: translateX(200%) translateY(-50px) scale(1);
+        }
+        #connectorContent, #flangeContent, #connectorSelected, #flangeSelected{
+            opacity:0;
+        }
+    }
 }
 
 @keyframes connectorAnimation1{
     0% {
         transform: translateX(-50%) scale(1);
-        top:2%;
+        top:0vw;
         left:50vw;
     }
     25% {
         transform: translateX(-50%) scale(.5);
-        top:10%;
+        top:0vw;
         left:40vw;
     }
     70% {
         transform: translateX(-50%) scale(.5);
-        top:10%;
+        top:0vw;
         left:40vw;
     }
     100% {
         transform: translateX(-50%) scale(.15);
-        top:10%;
+        top:0vw;
         left:35vw;
     }
 }
@@ -647,7 +701,7 @@
     0% {
         opacity:0;
         transform: translateX(-50%) scale(1);
-        top:23%;
+        top:2.5vw;
         left:65vw;
     }
     20% {
@@ -658,12 +712,12 @@
     }
     70%{
         transform:translateX(-50%) scale(1);
-        top:23%;
+        top:2.5vw;
         left:65vw;
     }
     100%{
         transform:translateX(-50%) scale(.4);
-        top:23%;
+        top:2.5vw;
         left:60vw;
     }
 }
@@ -687,12 +741,12 @@
 @keyframes connectorAnimation2{
     0%{
         transform: translateX(-50%) scale(.15);
-        top:10%;
+        top:0vw;
         left:35vw;
     }
     100%{
         transform:translateX(-50%) scale(.5);
-        top:10%;
+        top:0vw;
         left:50vw;
     }
 }
@@ -708,12 +762,12 @@
     0%{
         opacity:1;
         transform:translateX(-50%) scale(.4);
-        top:23%;
+        top:2.5vw;
         left:60vw;
     }
     100%{
         opacity:0;
-        top:23%;
+        top:2.5vw;
         left:100vw;
         transform: translateX(200%) scale(1);
     }
